@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "url": "https://github.com/organizationName/packageName.git"
+    "type": "git",
+    "url": "https://github.com/xdigu/npm-package.git"
   },
   "keywords": ["private", "test"],
   "author": "xdigu",
