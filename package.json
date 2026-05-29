@@ -2,6 +2,7 @@
   "name": "@xdigu/npm-package",
   "version": "0.0.1",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,8 +10,18 @@
     "type": "git",
     "url": "https://github.com/xdigu/npm-package.git"
   },
-  "keywords": ["private", "test"],
+  "keywords": [
+    "private",
+    "test"
+  ],
   "author": "xdigu",
   "license": "MIT",
-  "description": "A test package to test link"
+  "description": "A test package to test link",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.8",
+    "@semantic-release/release-notes-generator": "^14.1.1"
+  }
 }
