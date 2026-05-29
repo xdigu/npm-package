@@ -1,3 +1,13 @@
+## [0.0.6](https://github.com/xdigu/npm-package/compare/v0.0.5...v0.0.6) (2026-05-29)
+
+
+### Bug Fixes
+
+* fix npm audit ([574085b](https://github.com/xdigu/npm-package/commit/574085b7c62f2c697cc66703147fac350d1781d0))
+* order of plugins ([2c5891a](https://github.com/xdigu/npm-package/commit/2c5891a1aceb2ae84af67bb7ecacbb969d132629))
+* release ([f54567f](https://github.com/xdigu/npm-package/commit/f54567f3ab816ef643c3da23bd5fb19c137e7a69))
+* setup node with package defined ([4a3eb73](https://github.com/xdigu/npm-package/commit/4a3eb732c526984faceed51a996f7ce7453e79b5))
+
 ## [0.0.5](https://github.com/xdigu/npm-package/compare/v0.0.4...v0.0.5) (2026-05-29)
 
 
