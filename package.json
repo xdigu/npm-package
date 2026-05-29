@@ -1,0 +1,15 @@
+{
+  "name": "xdigu-npm-package",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "https://github.com/organizationName/packageName.git"
+  },
+  "keywords": ["private", "test"],
+  "author": "xdigu",
+  "license": "MIT",
+  "description": "A test package to test link"
+}
