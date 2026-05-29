@@ -1,5 +1,3 @@
-function print(text) {
-  console.info(text);
+export function print(text) {
+  console.info(`new version: ${text}`);
 }
-
-module.exports = { print };
