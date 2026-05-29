@@ -20,9 +20,9 @@ jobs:
           scope: "@xdigu"
 
       - name: Install dependencies
-        run: yarn
+        run: npm install
 
       - name: Publish package
-        run: yarn publish --access restricted
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
