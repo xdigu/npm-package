@@ -26,6 +26,7 @@
     "@semantic-release/release-notes-generator": "^14.1.1"
   },
   "publishConfig": {
-    "@xdigu:registry": "https://npm.pkg.github.com"
+    "@xdigu:registry": "https://npm.pkg.github.com",
+    "registry": "https://npm.pkg.github.com"
   }
 }
