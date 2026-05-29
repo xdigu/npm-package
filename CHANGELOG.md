@@ -1,3 +1,10 @@
+## [0.0.7](https://github.com/xdigu/npm-package/compare/v0.0.6...v0.0.7) (2026-05-29)
+
+
+### Bug Fixes
+
+* remove comment in log ([135337b](https://github.com/xdigu/npm-package/commit/135337bccb7b67ed3da477f9071adbf2331f5aef))
+
 ## [0.0.6](https://github.com/xdigu/npm-package/compare/v0.0.5...v0.0.6) (2026-05-29)
 
 
