@@ -1,3 +1,10 @@
+## [0.0.5](https://github.com/xdigu/npm-package/compare/v0.0.4...v0.0.5) (2026-05-29)
+
+
+### Bug Fixes
+
+* release ([b2bb061](https://github.com/xdigu/npm-package/commit/b2bb06131d10d236250b68af6a9d10416af09fc5))
+
 ## [0.0.4](https://github.com/xdigu/npm-package/compare/v0.0.3...v0.0.4) (2026-05-29)
 
 
