@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+set -e
+
+protected_branch='main'
+current_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$current_branch" = "$protected_branch" ]; then
+  printf '\n\x1b[31mERROR: Direct pushes to "%s" are not allowed.\x1b[0m\n\n' "$protected_branch"
+  echo "Create a feature branch and open a pull request instead."
+  echo "Example: git checkout -b feat/my-change && git push -u origin feat/my-change"
+  printf '\n'
+  exit 1
+fi
+
+yarn typecheck
+yarn test:related --push

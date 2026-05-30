@@ -14,7 +14,17 @@
   },
   "scripts": {
     "build": "tsdown",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "lint-staged": "lint-staged",
+    "prepare": "husky",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:related": "node scripts/test-related.mjs"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "eslint --fix --max-warnings=0"
   },
   "repository": {
     "type": "git",
@@ -28,14 +38,29 @@
   "license": "MIT",
   "description": "A test package to test link",
   "devDependencies": {
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@eslint/js": "^9.39.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.8",
     "@semantic-release/npm": "^13.1.5",
     "@semantic-release/release-notes-generator": "^14.1.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.9.1",
+    "eslint": "^9.39.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "husky": "^9.1.7",
+    "jest": "^30.4.2",
+    "lint-staged": "^17.0.5",
+    "npm": "^11.16.0",
+    "prettier": "^3.8.3",
+    "ts-jest": "^29.4.11",
     "tsdown": "^0.22.1",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

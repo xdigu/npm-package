@@ -56,3 +56,5 @@ tsdown.config.ts
 tsconfig.json
 .gitignore
 yarn.lock
+.prettierrc
+eslint.config.js
