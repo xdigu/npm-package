@@ -1,3 +1,10 @@
+# [0.1.0](https://github.com/xdigu/npm-package/compare/v0.0.8...v0.1.0) (2026-05-30)
+
+
+### Features
+
+* new release ([1dd57a3](https://github.com/xdigu/npm-package/commit/1dd57a31d1fcc83f9b6ec12ac4a95ecdf823de41))
+
 ## [0.0.8](https://github.com/xdigu/npm-package/compare/v0.0.7...v0.0.8) (2026-05-29)
 
 
