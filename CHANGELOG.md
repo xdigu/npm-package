@@ -1,3 +1,10 @@
+## [0.0.8](https://github.com/xdigu/npm-package/compare/v0.0.7...v0.0.8) (2026-05-29)
+
+
+### Bug Fixes
+
+* addint typescript and bundle package ([106a6ae](https://github.com/xdigu/npm-package/commit/106a6ae94613eebb11c0bf25105a3d394410e6b8))
+
 ## [0.0.7](https://github.com/xdigu/npm-package/compare/v0.0.6...v0.0.7) (2026-05-29)
 
 
