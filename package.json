@@ -20,6 +20,7 @@
     "prepare": "husky",
     "typecheck": "tsc --noEmit",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:related": "node scripts/test-related.mjs"
   },

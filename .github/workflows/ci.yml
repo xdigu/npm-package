@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Lint, Test, and Coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.x"
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Apply automatic lint fixes
+        run: yarn lint:fix
+
+      - name: Validate lint
+        run: yarn lint
+
+      - name: Run tests with coverage
+        id: coverage
+        run: yarn test:coverage
+
+      - name: Publish coverage summary
+        if: always() && (steps.coverage.outcome == 'success' || steps.coverage.outcome == 'failure')
+        run: |
+          set -euo pipefail
+
+          threshold=95
+
+          {
+            echo "## Coverage Report"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [[ ! -f coverage/coverage-summary.json ]]; then
+            echo "Coverage summary not found." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          node -e "
+            const fs = require('fs');
+            const threshold = ${threshold};
+            const summary = JSON.parse(fs.readFileSync('coverage/coverage-summary.json', 'utf8'));
+            const total = summary.total;
+            const metrics = ['statements', 'branches', 'functions', 'lines'];
+            const lines = [
+              'Scope: \`src/\` (via Jest \`collectCoverageFrom\`)',
+              '',
+              '| Metric | Coverage | Threshold | Status |',
+              '| --- | ---: | ---: | --- |',
+            ];
+            for (const metric of metrics) {
+              const data = total[metric];
+              if (!data || typeof data.pct !== 'number') continue;
+              const pct = data.pct;
+              const status = pct >= threshold ? 'Pass' : 'Fail';
+              lines.push(\`| \${metric} | \${pct}% | \${threshold}% | \${status} |\`);
+            }
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join('\\n') + '\\n');
+          "
