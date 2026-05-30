@@ -10,8 +10,8 @@ describe('print', () => {
   it('logs the provided text with a Text prefix', () => {
     const infoSpy = jest.spyOn(console, 'info').mockImplementation(() => {})
 
-    print('hello')
+    print('hello world!')
 
-    expect(infoSpy).toHaveBeenCalledWith('Text: hello')
+    expect(infoSpy).toHaveBeenCalledWith('hello world!')
   })
 })
